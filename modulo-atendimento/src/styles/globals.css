@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f8fafc; 
+  --surface: #ffffff;    
+
+  --foreground: #0f172a;      
+  --foreground-muted: #64748b; 
+  
+  --primary: #0284c7;       
+  --primary-hover: #0369a1;
+
+  --border: #e2e8f0;
+
+  --triage-red: #ef4444;    /* Emergência */
+  --triage-orange: #f97316; /* Muito Urgente */
+  --triage-yellow: #eab308; /* Urgente */
+  --triage-green: #22c55e;  /* Pouco Urgente */
+  --triage-blue: #3b82f6;   /* Não Urgente */
+}
+
+[data-theme="dark"] {
+  --background: #0f172a;
+  --surface: #1e293b;
+  --foreground: #f8fafc;
+}
+
+@theme static{
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+
+  --color-foreground: var(--foreground);
+  --color-muted: var(--foreground-muted);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  
+  --color-border: var(--border);
+
+  --color-triage-red: var(--triage-red);
+  --color-triage-orange: var(--triage-orange);
+  --color-triage-yellow: var(--triage-yellow);
+  --color-triage-green: var(--triage-green);
+  --color-triage-blue: var(--triage-blue);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
