@@ -39,8 +39,7 @@ export default function RootLayout({ children }: Readonly<{
           menuItems={[
             { label: "Dashboard", href: "/" },
             { label: "Pacientes", href: "/pacientes" },
-            { label: "Agendamentos", href: "/agendamentos" },
-            { label: "Relatórios", href: "/relatorios" },
+            { label: "Atendimentos", href: "/atendimentos" },
           ]}
           />  
           
