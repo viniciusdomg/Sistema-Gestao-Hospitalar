@@ -1,5 +1,7 @@
 # Sistema de Gestao Hospitalar - Modulo de Atendimento
 
+!!! O projeto usa o node ^20
+
 ## Stack
 
 - Next.js (App Router)
