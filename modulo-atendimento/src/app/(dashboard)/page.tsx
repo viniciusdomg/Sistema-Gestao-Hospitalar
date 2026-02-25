@@ -1,10 +1,21 @@
+import Indicadores from "@/src/features/dashboard/components/Indicadores";
+import { AtendimentosList } from "../../features/dashboard/components/AtendimentoList";
+
 function DashboardPage() {
-return (
-<div className="p-6">
-    <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-    <p>Este é o painel principal do sistema de atendimento hospitalar.</p>
-</div>
-);
+  return (
+    <>
+      <header className="mb-6" aria-label="Inicio da página">
+        <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
+        <p className="text-muted mt-1">
+          Visão geral do fluxo de atendimento hospitalar.
+        </p>
+      </header>
+
+      <Indicadores />
+
+      <AtendimentosList />
+    </>
+  );
 }
 
 export default DashboardPage;
