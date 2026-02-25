@@ -2,8 +2,12 @@ import { Atendimento } from "../domain/atendimento.schema";
 
 interface AtendimentoState {
     atendimentos: Atendimento[];
-    adicionarAtendimento: (atendimento: Atendimento) => void;
-    buscarByPacienteId(pacienteId: string): Atendimento[];
+    isLoading: boolean;
+    initialized: boolean;
+    error: string | null;
+    initialize: () => Promise<void>;
+    adicionarAtendimento: (atendimento: Atendimento) => Promise<void>;
+    buscarByPacienteId(pacienteId: string): Promise<Atendimento[]>;
 }
 
 export default AtendimentoState;
