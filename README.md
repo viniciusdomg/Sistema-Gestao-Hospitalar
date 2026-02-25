@@ -91,5 +91,5 @@ NEXT_PUBLIC_DATA_PROVIDER=localstorage
 
 ## Observacoes
 
-- Desenvolvi um preparado para evoluir de mock para API real sem quebrar as telas, mantendo a interface dos services.
+- Desenvolvi um sistema preparado para evoluir de mock para API real sem quebrar as telas, mantendo a interface dos services.
 - Formularios usam validacao de schema com regras condicionais via Zod.
