@@ -4,6 +4,7 @@ import { ReactNode, useEffect, useState } from "react";
 import { ThemeToggle } from "@/src/features/tema/components/ThemeToggle";
 import { Header } from "./header/Header";
 import Sidebar from "./sidebar/Sidebar";
+import { MdLocalHospital } from "react-icons/md";
 
 interface AppShellProps {
   children: ReactNode;
@@ -55,7 +56,14 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <>
       <Header
-        logo="LIGA contra o câncer"
+        logo={
+          <article className="flex items-center">
+            <MdLocalHospital className="hidden md:block text-2xl text-primary" />
+            <span className="ml-2 font-bold text-foreground">
+              Desafio Tecnico
+            </span>
+          </article>
+        }
         onMenuToggle={toggleSidebar}
         isMenuOpen={isSidebarOpen}
       />
