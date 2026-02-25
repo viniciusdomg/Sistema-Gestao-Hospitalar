@@ -1,14 +1,11 @@
 "use client";
+
 import { useEffect } from "react";
 import { useAtendimentoStore } from "../../atendimentos/data/atendimento.store";
+import { calculateDashboardMetrics } from "./dashboardMetrics.utils";
 
 export function useDashboardMetrics() {
-  const {
-    atendimentos,
-    isLoading,
-    initialized,
-    initialize,
-  } = useAtendimentoStore();
+  const { atendimentos, isLoading, initialized, initialize } = useAtendimentoStore();
 
   useEffect(() => {
     if (!initialized) {
@@ -16,19 +13,8 @@ export function useDashboardMetrics() {
     }
   }, [initialized, initialize]);
 
-  const hoje = new Date().toDateString();
-
-  const atendimentosHoje = atendimentos.filter(
-    (a) => new Date(a.dataHora).toDateString() === hoje,
-  ).length;
-
-  const pacientesEmEspera = atendimentos.filter(
-    (a) => a.status === "Aguardando",
-  ).length;
-
-  const internacoesAtivas = atendimentos.filter(
-    (a) => a.tipo === "Internação" && a.status === "Em Andamento",
-  ).length;
+  const { atendimentosHoje, pacientesEmEspera, internacoesAtivas } =
+    calculateDashboardMetrics(atendimentos);
 
   return {
     atendimentosHoje,
